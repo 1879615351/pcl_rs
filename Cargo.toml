@@ -3,9 +3,9 @@ members = [ "examples/test_pcl_rs"]
 
 [package]
 name = "pcl_rs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
-description = "A pure trust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2"
+description = "A pure rust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2"
 license = "MIT"
 keywords = ["PCL", "PointCloud","ros"]
 readme = "README.md"

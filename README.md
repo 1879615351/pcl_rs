@@ -1,12 +1,12 @@
 # pcl_rs
 
-A pure trust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2
+A pure rust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2
 
 ## Features
 
 - **Read PointCloud From PCD File**
   - `src/io/io_read.rs` => `load_from_pcd`
-- **Visualize PointCloud**。
+- **Visualize PointCloud**
   - `Implement types::type_traits::Point3DVisible trait for point cloud types`
   - `src/visual/point_cloud_viewer.rs` => `Use Struct CloudViewer`
 
