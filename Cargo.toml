@@ -1,0 +1,15 @@
+[package]
+name = "pcl_rs"
+version = "0.1.1"
+edition = "2021"
+description = "A pure trust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2"
+license = "MIT OR Apache-2.0"
+keywords = ["PCL", "PointCloud","ros"]
+readme = "README.md"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ros_pointcloud2 = "0.4.0"
+ros-nalgebra = "0.1.0"
+kdtree = "0.7.0"
+kiss3d = "0.35.0"
