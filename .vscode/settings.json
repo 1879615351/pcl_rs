@@ -3,6 +3,8 @@
         "./Cargo.toml",
         "./Cargo.toml",
         "./Cargo.toml",
-        "./Cargo.toml"
+        "./Cargo.toml",
+        "./Cargo.toml",
+        "./examples/test_pcl_rs/Cargo.toml"
     ]
 }

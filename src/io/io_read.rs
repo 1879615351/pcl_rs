@@ -1,5 +1,5 @@
 use crate::types::{PointCloud,Point3DTrait};
-use std::io::{BufRead, BufReader, Read};
+use std::io::{BufRead, BufReader};
 use std::path::Path;
 use std::fs::File;
 pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT>,std::io::Error>{

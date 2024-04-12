@@ -1,4 +1,3 @@
-use ros_pointcloud2::pcl_utils::{PointXYZ,PointXYZI,PointXYZRGB,PointXYZRGBA,PointXYZRGBNormal,PointXYZINormal,PointXYZL,PointXYZRGBL,PointXYZNormal};
 use super::type_traits::Point3DTrait;
 
 pub struct PointCloud<PointT:Point3DTrait>{

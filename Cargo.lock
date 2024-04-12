@@ -1543,6 +1543,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "test_pcl_rs"
+version = "0.1.0"
+dependencies = [
+ "pcl_rs",
+ "ros_pointcloud2",
+]
+
+[[package]]
 name = "thiserror"
 version = "1.0.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"

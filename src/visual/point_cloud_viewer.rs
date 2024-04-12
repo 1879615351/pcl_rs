@@ -1,11 +1,7 @@
-use ros_pointcloud2::pcl_utils::{PointXYZ,PointXYZI,PointXYZRGB,PointXYZRGBA,PointXYZRGBNormal,PointXYZINormal,PointXYZL,PointXYZRGBL,PointXYZNormal};
-use kiss3d::nalgebra::{Vector3, UnitQuaternion,Point3};
+use kiss3d::nalgebra::Point3;
 use kiss3d::window::Window;
 use kiss3d::light::Light;
 use kiss3d::camera::ArcBall;
-use kiss3d::planar_camera::{PlanarCamera, Sidescroll};
-use kiss3d::event::{Action, MouseButton, WindowEvent};
-use std::sync::Arc;
 use crate::types::Point3DVisible;
 use crate::types::PointCloud;
 pub struct Scene {
