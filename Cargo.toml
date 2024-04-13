@@ -3,7 +3,7 @@ members = [ "examples/test_pcl_rs"]
 
 [package]
 name = "pcl_rs"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 description = "A pure rust PCL tool that includes functions such as reading PCD files and displaying point clouds, which can be used in conjunction with ros_pointcloud2"
 license = "MIT"
