@@ -4,7 +4,7 @@ use crate::types::{Point3DTrait,PointCloud};
 // const MAX_DISTANCE: f32 = 1.0;
 
 struct Point3DAdapter;
-struct ManhattenDistance;
+// struct ManhattenDistance;
 impl <Point:Point3DTrait>k_nearest::Adapter<3, f32, Point> for Point3DAdapter {
 	fn get(point: &Point, dimension: usize) -> f32 {
 		match dimension {
@@ -15,18 +15,18 @@ impl <Point:Point3DTrait>k_nearest::Adapter<3, f32, Point> for Point3DAdapter {
 		}
 	}
 }
-impl<const N: usize> k_nearest::Metric<N, f32> for ManhattenDistance {
-	fn distance(left: &[f32; N], right: &[f32; N]) -> f32 {
-		(0..N)
-			.map(|d| left[d] - right[d])
-			.map(|v| v.abs())
-			.fold(0.0, |sum, v| sum + v)
-	}
-	fn distance_plane(position: &[f32; N], plane: f32, dimension: usize) -> f32 {
-		let diff = position[dimension] - plane;
-		diff.abs()
-	}
-}
+// impl<const N: usize> k_nearest::Metric<N, f32> for ManhattenDistance {
+// 	fn distance(left: &[f32; N], right: &[f32; N]) -> f32 {
+// 		(0..N)
+// 			.map(|d| left[d] - right[d])
+// 			.map(|v| v.abs())
+// 			.fold(0.0, |sum, v| sum + v)
+// 	}
+// 	fn distance_plane(position: &[f32; N], plane: f32, dimension: usize) -> f32 {
+// 		let diff = position[dimension] - plane;
+// 		diff.abs()
+// 	}
+// }
 pub struct KdtreeSearch<Point:Point3DTrait>{
     kdtree:Option<k_nearest::KDTree::<
             3,       // dimensions

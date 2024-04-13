@@ -3,8 +3,8 @@ use pcl_rs::io::load_from_pcd;
 use pcl_rs::visual::CloudViewer;
 use pcl_rs::search::KdtreeSearch;
 fn main() {
-    let cloud1 = load_from_pcd::<PointXYZ>("/home/yansu/projectspace/pcl_rs/pcl_rs/assets/scan3.pcd").unwrap();
-    let cloud2 = load_from_pcd::<PointXYZRGB>("/home/yansu/projectspace/pcl_rs/pcl_rs/assets/scan3.pcd").unwrap();
+    let cloud1 = load_from_pcd::<PointXYZ>("/home/xxx/projectspace/pcl_rs/pcl_rs/assets/scan3.pcd").unwrap();
+    let cloud2 = load_from_pcd::<PointXYZRGB>("/home/xxx/projectspace/pcl_rs/pcl_rs/assets/scan3.pcd").unwrap();
     let mut cloud_viewer = CloudViewer::new("test");
     let mut kd_tree = KdtreeSearch::new();
     kd_tree.set_input_cloud(&cloud1);

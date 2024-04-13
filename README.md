@@ -7,9 +7,10 @@ A pure rust PCL tool that includes functions such as reading PCD files and displ
 - **Read PointCloud From PCD File**
   - `src/io/io_read.rs` => `load_from_pcd`
 - **Visualize PointCloud**
-  - `Implement types::type_traits::Point3DVisible trait for point cloud types`
+  - `Implement types::type_traits::Point3DVisible trait` => `impl Point3DVisible for  PointXYZ`
   - `src/visual/point_cloud_viewer.rs` => `Use Struct CloudViewer`
-
+- **PointCloud KNN Search**
+  - `src/search/search_kdtree.rs` => `Use Struct KdtreeSearch`
 ## PointCloud Visualization
 
 ![avatar](./assets/point_cloud.png)
@@ -42,7 +43,7 @@ fn main() {
 ```
 
 ## Road Map
-- [x] Read PointCloud From PCD File(**Only ASCII Format Now**)
+- [X] Read PointCloud From PCD File(**Only ASCII Format Now**)
 - [ ] Read PointCloud From More Format File
 - [X] KNN Search
 - [ ] ICP 
