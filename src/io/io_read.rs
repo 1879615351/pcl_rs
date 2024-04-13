@@ -9,7 +9,6 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
     let mut line = String::new();
     let mut format = String::new();
     let mut points = Vec::new();
-    // 读取头部，找到数据格式和点的数量
     while reader.read_line(&mut line)? > 0 {
         if line.starts_with("POINTS"){
 
@@ -23,7 +22,7 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
     }
     match format.as_str() {
         "ascii" => {
-            // ASCII格式处理
+            // ASCII
             while reader.read_line(&mut line)? > 0 {
                 let values: Vec<f32> = line.split_whitespace()
                                            .filter_map(|s| s.parse().ok())
@@ -50,7 +49,7 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
         //         }
         //     }
         // },
-        //TODO: 别的格式支持
+        //TODO: other format!
         _ => return Err(std::io::Error::new(std::io::ErrorKind::Other, "Unsupported format")),
     }
     Ok(PointCloud::from_point(points))

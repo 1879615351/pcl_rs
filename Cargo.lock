@@ -698,14 +698,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "kdtree"
-version = "0.7.0"
+name = "k_nearest"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f0a0e9f770b65bac9aad00f97a67ab5c5319effed07f6da385da3c2115e47ba"
-dependencies = [
- "num-traits",
- "thiserror",
-]
+checksum = "6982619e81aed97ea2fee0852d7481fcc935d7216725efa087b3364a5546c912"
 
 [[package]]
 name = "kernel32-sys"
@@ -1211,9 +1207,9 @@ checksum = "de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c"
 
 [[package]]
 name = "pcl_rs"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
- "kdtree",
+ "k_nearest",
  "kiss3d",
  "ros-nalgebra",
  "ros_pointcloud2",

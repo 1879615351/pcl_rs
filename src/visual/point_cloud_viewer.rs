@@ -15,8 +15,8 @@ impl Scene{
     }
 }
 pub struct CloudViewer{
-    clouds: Vec<Vec<Point3<f32>>>,  //每个点云所有点
-    colors: Vec<Vec<Point3<f32>>>, //每个点云所有点颜色
+    clouds: Vec<Vec<Point3<f32>>>,
+    colors: Vec<Vec<Point3<f32>>>,
     window:Window,
     scene:Scene
 }

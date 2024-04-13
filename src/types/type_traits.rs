@@ -9,8 +9,7 @@ pub trait Point3DTrait{
 pub trait ToKiss3D {
     fn to_kiss3d(&self) -> Point3<f32>;
 }
-pub trait Point3DVisible:Point3DTrait+ToKiss3D{}
-
+pub trait Point3DVisible : Point3DTrait+ToKiss3D{}
 impl Point3DVisible for PointXYZ{}
 impl Point3DVisible for PointXYZRGB{}
 

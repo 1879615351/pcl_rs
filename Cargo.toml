@@ -14,5 +14,5 @@ repository = "https://github.com/1879615351/pcl_rs"
 [dependencies]
 ros_pointcloud2 = "0.4.0"
 ros-nalgebra = "0.1.0"
-kdtree = "0.7.0"
+k_nearest = "0.2.0"
 kiss3d = "0.35.0"
