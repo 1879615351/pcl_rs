@@ -1,4 +1,4 @@
-use ros_pointcloud2::pcl_utils::{PointXYZ,PointXYZI,PointXYZRGB,PointXYZRGBA,PointXYZRGBNormal,PointXYZINormal,PointXYZL,PointXYZRGBL,PointXYZNormal};
+use ros_pointcloud2::points::{PointXYZ,PointXYZI,PointXYZRGB,PointXYZRGBA,PointXYZRGBNormal,PointXYZINormal,PointXYZL,PointXYZRGBL,PointXYZNormal};
 use pcl_rs::io::load_from_pcd;
 use pcl_rs::visual::CloudViewer;
 use pcl_rs::search::KdtreeSearch;
