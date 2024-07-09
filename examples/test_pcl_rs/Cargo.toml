@@ -8,5 +8,5 @@ edition = "2021"
 name = "test_pcl_rs"
 
 [dependencies]
-ros_pointcloud2 = "0.4.0"
+ros_pointcloud2 = "0.5.0"
 pcl_rs = { path = "../../" }
