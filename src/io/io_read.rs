@@ -1,8 +1,10 @@
-use crate::types::{PointCloud,Point3DTrait};
+use crate::types::{Point3DTrait, PointCloud};
+use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
-use std::fs::File;
-pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT>,std::io::Error>{
+pub fn load_from_pcd<PointT: Point3DTrait>(
+    path: &str,
+) -> Result<PointCloud<PointT>, std::io::Error> {
     let path = Path::new(path);
     let file = File::open(path)?;
     let mut reader = BufReader::new(file);
@@ -10,9 +12,7 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
     let mut format = String::new();
     let mut points = Vec::new();
     while reader.read_line(&mut line)? > 0 {
-        if line.starts_with("POINTS"){
-
-        }
+        if line.starts_with("POINTS") {}
         if line.starts_with("DATA") {
             let parts: Vec<&str> = line.split_whitespace().collect();
             format = parts[1].to_string();
@@ -24,18 +24,22 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
         "ascii" => {
             // ASCII
             while reader.read_line(&mut line)? > 0 {
-                let values: Vec<f32> = line.split_whitespace()
-                                           .filter_map(|s| s.parse().ok())
-                                           .collect();
+                let values: Vec<f32> = line
+                    .split_whitespace()
+                    .filter_map(|s| s.parse().ok())
+                    .collect();
                 //println!("{:?}",values);
                 if values.len() >= 3 {
-                    points.push(PointT::new(values[0], values[1],values[2]));
-                }else{
-                    return Err(std::io::Error::new(std::io::ErrorKind::Other, "invalid point data"));
+                    points.push(PointT::new(values[0], values[1], values[2]));
+                } else {
+                    return Err(std::io::Error::new(
+                        std::io::ErrorKind::Other,
+                        "invalid point data",
+                    ));
                 }
                 line.clear();
             }
-        }, 
+        }
         // "binary" => {
         //     let mut buffer = Vec::new();
         //     reader.read_to_end(&mut buffer)?;
@@ -50,7 +54,12 @@ pub fn load_from_pcd<PointT:Point3DTrait>(path:&str) -> Result<PointCloud<PointT
         //     }
         // },
         //TODO: other format!
-        _ => return Err(std::io::Error::new(std::io::ErrorKind::Other, "Unsupported format")),
+        _ => {
+            return Err(std::io::Error::new(
+                std::io::ErrorKind::Other,
+                "Unsupported format",
+            ))
+        }
     }
     Ok(PointCloud::from_point(points))
 }
